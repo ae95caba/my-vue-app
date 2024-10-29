@@ -1,18 +1,24 @@
-<script setup>
-import { ref } from "vue";
-
-const name = ref("John Doe");
-const status = ref("pending");
-const link = ref("https://chatgpt.com");
-const tasks = ref(["Task one", "Task two", "Task three", "Task four"]);
-const toggleStatus = () => {
-  if (status.value === "active") {
-    status.value = "peding";
-  } else if (status.value === "pending") {
-    status.value = "active";
-  } else {
-    status.value = "active";
-  }
+<script>
+export default {
+  data() {
+    return {
+      name: "John Doe",
+      status: "pending",
+      link: "https://chatgpt.com",
+      tasks: ["Task one", "Task two", "Task three", "Task four"],
+    };
+  },
+  methods: {
+    toggleStatus() {
+      if (this.status === "active") {
+        this.status = "peding";
+      } else if (this.status === "pending") {
+        this.status = "active";
+      } else {
+        this.status = "active";
+      }
+    },
+  },
 };
 </script>
 
