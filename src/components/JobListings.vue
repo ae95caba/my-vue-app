@@ -1,7 +1,7 @@
 <script setup>
 import JobData from "@/jobs.json";
 import { ref } from "vue";
-
+import JobListing from "./JobListing.vue";
 const jobs = ref(JobData);
 console.log(jobs.value);
 </script>
@@ -12,9 +12,7 @@ console.log(jobs.value);
 
       <!-- Show job listing when done loading -->
       <div class="job-list">
-        <div v-for="job in jobs" :key="job.id">
-          {{ job.title }}
-        </div>
+        <JobListing v-for="job in jobs" :key="job.id" :job="job" />
       </div>
     </div>
   </section>
