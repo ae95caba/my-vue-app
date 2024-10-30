@@ -1,12 +1,21 @@
-<script setup></script>
+<script setup>
+import { defineProps } from "vue";
+defineProps({
+  title: { type: String, default: "Become a Vue Dev" },
+  subtitle: {
+    type: String,
+    default: "Find the Vue job that fits your skills and needs",
+  },
+});
+</script>
 
 <template>
   <section class="hero-section">
     <div class="container">
       <div class="text-center">
-        <h1 class="hero-title">Become a Vue Dev</h1>
+        <h1 class="hero-title">{{ title }}</h1>
         <p class="hero-description">
-          Find the Vue job that fits your skills and needs
+          {{ subtitle }}
         </p>
       </div>
     </div>
