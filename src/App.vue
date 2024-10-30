@@ -5,6 +5,7 @@ const name = ref("John Doe");
 const status = ref("pending");
 const link = ref("https://chatgpt.com");
 const tasks = ref(["Task one", "Task two", "Task three", "Task four"]);
+const newTask = ref("");
 const toggleStatus = () => {
   if (status.value === "active") {
     status.value = "peding";
@@ -14,9 +15,21 @@ const toggleStatus = () => {
     status.value = "active";
   }
 };
+
+const addTask = () => {
+  if (newTask.value.trim() !== "") {
+    tasks.value.push(newTask.value);
+    newTask.value = "";
+  }
+};
 </script>
 
 <template>
+  <form @submit.prevent="addTask">
+    <label for="newTask">Add task</label>
+    <input type="text" id="newTask" name="newTask" v-model="newTask" />
+    <button type="submit">Submit</button>
+  </form>
   <h1>{{ name }}</h1>
   <br />
   <p v-if="status === `active`">User is active</p>
