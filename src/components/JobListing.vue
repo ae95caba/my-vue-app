@@ -37,7 +37,7 @@ const truncatedDescription = computed(() => {
 
       <div class="job-details">
         <div class="location">
-          <i class="fa-solid fa-location-dot"></i>
+          <i class="pi pi-map-marker"></i>
           {{ job.location }}
         </div>
         <a :href="`/job/` + job.id" class="read-more-button">Read More</a>
