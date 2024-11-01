@@ -14,9 +14,9 @@ import logo from "@/assets/images/logo.png";
           </a>
           <div class="menu">
             <div class="menu-items">
-              <a href="index.html" class="menu-link active">Home</a>
-              <a href="jobs.html" class="menu-link">Jobs</a>
-              <a href="add-job.html" class="menu-link">Add Job</a>
+              <a href="/" class="menu-link active">Home</a>
+              <a href="/jobs" class="menu-link">Jobs</a>
+              <a href="/jobs/add" class="menu-link">Add Job</a>
             </div>
           </div>
         </div>
