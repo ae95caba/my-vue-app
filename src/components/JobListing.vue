@@ -3,6 +3,7 @@ import { defineProps, ref, computed } from "vue";
 const props = defineProps({
   job: Object,
 });
+import { RouterLink } from "vue-router";
 const showFullDescription = ref(false);
 const toggleDescription = () => {
   showFullDescription.value = !showFullDescription.value;
@@ -40,7 +41,9 @@ const truncatedDescription = computed(() => {
           <i class="pi pi-map-marker"></i>
           {{ job.location }}
         </div>
-        <a :href="`/job/` + job.id" class="read-more-button">Read More</a>
+        <RouterLink :to="`/job/` + job.id" class="read-more-button"
+          >Read More</RouterLink
+        >
       </div>
     </div>
   </div>

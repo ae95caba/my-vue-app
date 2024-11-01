@@ -1,5 +1,6 @@
 <script setup>
 import logo from "@/assets/images/logo.png";
+import { RouterLink } from "vue-router";
 </script>
 
 <template>
@@ -8,15 +9,15 @@ import logo from "@/assets/images/logo.png";
       <div class="navbar-content">
         <div class="navbar-left">
           <!-- Logo -->
-          <a class="logo" href="index.html">
+          <RouterLink class="logo" to="/">
             <img class="logo-img" :src="logo" alt="Vue Jobs" />
             <span class="logo-text">Vue Jobs</span>
-          </a>
+          </RouterLink>
           <div class="menu">
             <div class="menu-items">
-              <a href="/" class="menu-link active">Home</a>
-              <a href="/jobs" class="menu-link">Jobs</a>
-              <a href="/jobs/add" class="menu-link">Add Job</a>
+              <RouterLink to="/" class="menu-link active">Home</RouterLink>
+              <RouterLink to="/jobs" class="menu-link">Jobs</RouterLink>
+              <RouterLink to="/jobs/add" class="menu-link">Add Job</RouterLink>
             </div>
           </div>
         </div>
