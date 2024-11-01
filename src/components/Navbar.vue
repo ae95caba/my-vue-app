@@ -1,6 +1,11 @@
 <script setup>
 import logo from "@/assets/images/logo.png";
-import { RouterLink } from "vue-router";
+import { RouterLink, useRoute } from "vue-router";
+
+const activeClassForRoute = (routePath) => {
+  const route = useRoute();
+  return route.path === routePath ? "active" : "";
+};
 </script>
 
 <template>
@@ -15,9 +20,22 @@ import { RouterLink } from "vue-router";
           </RouterLink>
           <div class="menu">
             <div class="menu-items">
-              <RouterLink to="/" class="menu-link active">Home</RouterLink>
-              <RouterLink to="/jobs" class="menu-link">Jobs</RouterLink>
-              <RouterLink to="/jobs/add" class="menu-link">Add Job</RouterLink>
+              <RouterLink
+                to="/"
+                :class="`menu-link ${activeClassForRoute('/')}`"
+              >
+                Home
+              </RouterLink>
+              <RouterLink
+                to="/jobs"
+                :class="`menu-link ${activeClassForRoute('/jobs')}`"
+                >Jobs</RouterLink
+              >
+              <RouterLink
+                to="/jobs/add"
+                :class="`menu-link ${activeClassForRoute('/jobs/add')}`"
+                >Add Job</RouterLink
+              >
             </div>
           </div>
         </div>
